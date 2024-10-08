@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/space_background">
+
+    <!-- Título del menú -->
+    <TextView
+        android:id="@+id/menu_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Qué hacemos hoy?"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <!-- Botón 1 - Opción del menú -->
+    <Button
+        android:id="@+id/option_1_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Consultar tiempo"
+        app:layout_constraintTop_toBottomOf="@id/menu_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <!-- Botón 2 - Opción del menú -->
+    <Button
+        android:id="@+id/option_2_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Control emocional"
+        app:layout_constraintTop_toBottomOf="@id/option_1_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintVertical_bias="0.1" />
+
+    <!-- Botón 3 - Opción del menú -->
+    <Button
+        android:id="@+id/option_3_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Configuración"
+        app:layout_constraintTop_toBottomOf="@id/option_2_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintVertical_bias="0.1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
