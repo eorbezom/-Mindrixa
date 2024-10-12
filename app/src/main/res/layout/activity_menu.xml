@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -20,40 +21,46 @@
         app:layout_constraintVertical_bias="0.1" />
 
     <!-- Botón 1 - Opción del menú -->
+    <!-- Ajusta el espacio vertical -->
+
+    <!-- Botón 2 - Opción del menú -->
+
     <Button
         android:id="@+id/option_1_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Consultar tiempo"
-        app:layout_constraintTop_toBottomOf="@id/menu_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintWidth_percent="0.8"
-        app:layout_constraintVertical_bias="0.1" />
+        android:layout_marginTop="208dp"
 
-    <!-- Botón 2 - Opción del menú -->
+        android:text="Consultar tiempo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/menu_title"
+        app:layout_constraintWidth_percent="0.8" />
+
+    <!-- Ajusta el espacio vertical -->
+
+    <!-- Botón 3 - Opción del menú -->
     <Button
         android:id="@+id/option_2_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Control emocional"
-        app:layout_constraintTop_toBottomOf="@id/option_1_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.8"
-        app:layout_constraintVertical_bias="0.1" />
+        android:layout_marginTop="12dp"
 
-    <!-- Botón 3 - Opción del menú -->
+        android:text="Control emocional"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/option_1_button"
+        app:layout_constraintWidth_percent="0.8" />
+
     <Button
         android:id="@+id/option_3_button"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:text="Configuración"
-        app:layout_constraintTop_toBottomOf="@id/option_2_button"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintWidth_percent="0.8"
-        app:layout_constraintVertical_bias="0.1" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/option_2_button"
+        app:layout_constraintWidth_percent="0.8" /> <!-- Ajusta el espacio vertical -->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

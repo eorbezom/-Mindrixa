@@ -1,43 +1,43 @@
 plugins {
-    alias(libs.plugins.androidApplication)
+    alias(libs.plugins.androidApplication) // Se usa el plugin de aplicación de Android
 }
 
 android {
-    namespace = "com.example.mindrixa"
-    compileSdk = 34
+    namespace = "com.example.mindrixa" // Espacio de nombres del proyecto
+    compileSdk = 34 // Versión del SDK de compilación
 
     defaultConfig {
-        applicationId = "com.example.mindrixa"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = "com.example.mindrixa" // ID de la aplicación
+        minSdk = 24 // SDK mínimo que la aplicación soportará
+        targetSdk = 34 // SDK objetivo
+        versionCode = 1 // Código de versión
+        versionName = "1.0" // Nombre de versión
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner" // Runner para pruebas
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = false // No se minificará en la versión de lanzamiento
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro" // Archivos de configuración de ProGuard
             )
         }
     }
+
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8 // Compatibilidad con Java 1.8
+        targetCompatibility = JavaVersion.VERSION_1_8 // Compatibilidad con Java 1.8
     }
 }
 
 dependencies {
-
-    implementation(libs.appcompat)
-    implementation(libs.material)
-    implementation(libs.activity)
-    implementation(libs.constraintlayout)
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.ext.junit)
-    androidTestImplementation(libs.espresso.core)
+    implementation(libs.appcompat) // Dependencia de AppCompat
+    implementation(libs.material) // Dependencia de Material Design
+    implementation(libs.activity) // Dependencia de actividades
+    implementation(libs.constraintlayout) // Dependencia de ConstraintLayout
+    testImplementation(libs.junit) // Dependencia para pruebas unitarias
+    androidTestImplementation(libs.ext.junit) // Dependencia para pruebas instrumentadas
+    androidTestImplementation(libs.espresso.core) // Dependencia para pruebas de UI
 }
