@@ -8,28 +8,37 @@
 
     <ImageView
         android:id="@+id/welcomeImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="419dp"
         android:src="@drawable/character_image" />
     <!-- Asegúrate de que la imagen esté en res/drawable y el nombre sea correcto -->
 
     <TextView
         android:id="@+id/welcomeTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¡Bienvenido a Mindrixa!"
+        android:layout_width="262dp"
+        android:layout_height="110dp"
         android:layout_below="@id/welcomeImageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:textSize="24sp" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="85dp"
+        android:layout_marginTop="5dp"
+        android:alpha="80"
+        android:text="¡Bienvenido a Mindrixa!"
+        android:textAlignment="center"
+        android:textColor="#00ECE4"
+        android:textSize="48sp" />
 
     <Button
         android:id="@+id/myButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Iniciar"
         android:layout_below="@id/welcomeTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="153dp"
+        android:layout_marginTop="9dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="continuar"
+        android:textColor="#0022FF"
+        android:textSize="16sp"
+        tools:backgroundTint="#00FFFFFF" />
     <!-- Asegúrate de que este ID coincida con el de tu actividad -->
 </RelativeLayout>
