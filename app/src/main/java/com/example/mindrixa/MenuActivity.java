@@ -1,9 +1,9 @@
 package com.example.mindrixa;
 
+import android.content.Intent;  // Asegúrate de agregar esta importación
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MenuActivity extends AppCompatActivity {
@@ -13,11 +13,12 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        // Opción 1: Consultar el tiempo
+        // Opción 1: Gestión de tiempo
         Button option1 = findViewById(R.id.option_1_button);
         option1.setOnClickListener(v -> {
-            Toast.makeText(MenuActivity.this, "Consultar tiempo", Toast.LENGTH_SHORT).show();
-            // Aquí puedes agregar la lógica para consultar el tiempo
+            // Redirigir a la actividad de gestión de tareas
+            Intent intent = new Intent(MenuActivity.this, TaskManagementActivity.class);
+            startActivity(intent);
         });
 
         // Opción 2: Control emocional

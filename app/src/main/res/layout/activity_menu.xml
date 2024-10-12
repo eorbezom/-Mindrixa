@@ -32,7 +32,7 @@
 
         android:backgroundTint="#FFFEFE"
         android:fontFamily="sans-serif"
-        android:text="Consultar tiempo"
+        android:text="Gestion de tiempo"
         android:textColor="#0035F4"
         app:cornerRadius="?android:attr/windowTitleSize"
         app:layout_constraintEnd_toEndOf="parent"

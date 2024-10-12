@@ -13,6 +13,7 @@
         android:theme="@style/Theme.Mindrixa"
         tools:targetApi="31">
 
+        <!-- MainActivity: Es la actividad principal que se inicia al abrir la aplicación -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -22,9 +23,21 @@
             </intent-filter>
         </activity>
 
+        <!-- WelcomeActivity: Pantalla de bienvenida -->
         <activity android:name=".WelcomeActivity" />
+
+        <!-- LoginActivity: Actividad de inicio de sesión -->
         <activity android:name=".LoginActivity" />
+
+        <!-- MenuActivity: El menú de opciones -->
         <activity android:name=".MenuActivity" />
+
+        <!-- TaskManagementActivity: Pantalla de gestión de tareas -->
+        <activity android:name=".TaskManagementActivity" />
+
+        <!-- AddTaskActivity: Pantalla para agregar nuevas tareas -->
+        <activity android:name=".AddTaskActivity" />
+
     </application>
 
 </manifest>

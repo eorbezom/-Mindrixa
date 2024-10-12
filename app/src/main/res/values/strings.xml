@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Mindrixa</string>
+    <string name="ready_button">Ya estoy listo</string>
+    <string name="delete_button">Borrar</string>
+    <string name="reprogram_button">Reprogramar</string>
+    <string name="add_more_tasks">Agregar Más Tareas</string>
+    <string name="exercising_image">Imagen de ejercicio</string>
     <!-- Agrega otras cadenas si es necesario -->
 </resources>

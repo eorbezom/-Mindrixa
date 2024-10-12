@@ -40,4 +40,7 @@ dependencies {
     testImplementation(libs.junit) // Dependencia para pruebas unitarias
     androidTestImplementation(libs.ext.junit) // Dependencia para pruebas instrumentadas
     androidTestImplementation(libs.espresso.core) // Dependencia para pruebas de UI
+
+    // Agregar la dependencia de Gson directamente
+    implementation(libs.gson)
 }
