@@ -38,6 +38,9 @@
         <!-- AddTaskActivity: Pantalla para agregar nuevas tareas -->
         <activity android:name=".AddTaskActivity" />
 
+        <activity android:name=".SelectTimeActivity" />
+
+
     </application>
 
 </manifest>

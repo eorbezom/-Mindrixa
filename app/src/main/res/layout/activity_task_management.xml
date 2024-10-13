@@ -76,11 +76,23 @@
             app:layout_constraintEnd_toStartOf="@+id/readyButton"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.866" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="221dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="124dp"
+            android:text="Entrenamiento  de pecho hoy "
+            android:textColor="#12FF02"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clock" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/taskRecyclerView"
-        android:layout_width="match_parent"
+        android:layout_width="325dp"
         android:layout_height="164dp"
         android:layout_marginStart="16dp"
         android:layout_weight="1"

@@ -1,46 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    style="@style/cajon">
+    android:orientation="vertical"
+    android:padding="16dp">
 
+    <!-- EditText para el nombre o comentario de la tarea -->
     <EditText
         android:id="@+id/taskNameEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre de la tarea" />
+        android:hint="Comentario de la tarea" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <!-- DatePicker para seleccionar la fecha -->
+    <DatePicker
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
-        <DatePicker
-            android:id="@+id/datePicker"
-            android:layout_width="wrap_content"
-            android:layout_height="396dp"
-            android:layout_marginTop="28dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <!-- Botón para seleccionar la hora -->
+    <Button
+        android:id="@+id/selectTimeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar Hora" />
 
-        <TimePicker
-            android:id="@+id/timePicker"
-            android:layout_width="317dp"
-            android:layout_height="315dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <!-- Botón de guardar tarea -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar" />
 
-        <Button
-            android:id="@+id/saveButton"
-            android:layout_width="223dp"
-            android:layout_height="65dp"
-            android:text="Guardar"
-            tools:layout_editor_absoluteX="278dp"
-            tools:layout_editor_absoluteY="916dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    <!-- Botón de atrás -->
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Atrás" />
 </LinearLayout>

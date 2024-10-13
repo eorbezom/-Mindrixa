@@ -1,56 +1,58 @@
 package com.example.mindrixa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TimePicker;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AddTaskActivity extends AppCompatActivity {
 
-    private DatabaseHelper databaseHelper;
     private EditText taskNameEditText;
     private DatePicker datePicker;
-    private TimePicker timePicker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_task);
 
-        // Inicializar DatabaseHelper
-        databaseHelper = new DatabaseHelper(this);
-
-        // Conectar las vistas con el layout XML
+        // Conectar vistas
         taskNameEditText = findViewById(R.id.taskNameEditText);
         datePicker = findViewById(R.id.datePicker);
-        timePicker = findViewById(R.id.timePicker);
 
-        // Configurar el TimePicker para el formato de 24 horas
-        timePicker.setIs24HourView(true);
+        // Botón de seleccionar hora
+        Button selectTimeButton = findViewById(R.id.selectTimeButton);
+        selectTimeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Ir a la actividad de seleccionar hora
+                Intent intent = new Intent(AddTaskActivity.this, SelectTimeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // Botón de guardar
         Button saveButton = findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Obtener los datos ingresados
-                String taskName = taskNameEditText.getText().toString();
-                int day = datePicker.getDayOfMonth();
-                int month = datePicker.getMonth();
-                int year = datePicker.getYear();
+                // Guardar datos o realizar las acciones correspondientes
+                // Puedes obtener la fecha seleccionada con datePicker
+                // y el nombre de la tarea con taskNameEditText.getText().toString()
 
-                // Cambiar los métodos según la API de Android
-                int hour = timePicker.getHour();   // Para versiones recientes de Android
-                int minute = timePicker.getMinute();  // Para versiones recientes de Android
+                // Volver a la actividad anterior
+                finish();
+            }
+        });
 
-                // Crear nueva tarea y guardarla en la base de datos
-                Task newTask = new Task(taskName, day, month, year, hour, minute);
-                databaseHelper.addTask(newTask);
-
-                // Regresar a la pantalla de gestión de tareas
+        // Botón de atrás
+        Button backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Volver a la actividad anterior
                 finish();
             }
         });
