@@ -1,53 +1,72 @@
 package com.example.mindrixa;
 
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TimePicker;
+import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import java.util.Calendar;
 
 public class SelectTimeActivity extends AppCompatActivity {
 
-    private TimePicker timePicker;
+    private TextView timeTextView;
+    private Button saveButton, cancelButton;
+    private String selectedTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_select_time);
 
-        // Conectar TimePicker
-        timePicker = findViewById(R.id.timePicker);
+        timeTextView = findViewById(R.id.timeTextView);
+        saveButton = findViewById(R.id.saveButton);
+        cancelButton = findViewById(R.id.cancelButton);
 
-        // Configurar el formato de 24 horas en TimePicker programáticamente
-        timePicker.setIs24HourView(true);
-
-        // Botón de confirmar
-        Button confirmButton = findViewById(R.id.confirmButton);
-        confirmButton.setOnClickListener(new View.OnClickListener() {
+        // Selección de hora
+        timeTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Obtener la hora seleccionada
-                int hour = timePicker.getHour();
-                int minute = timePicker.getMinute();
-
-                // Enviar los datos de vuelta a la actividad anterior
-                Intent intent = new Intent();
-                intent.putExtra("selectedHour", hour);
-                intent.putExtra("selectedMinute", minute);
-                setResult(RESULT_OK, intent);
-                finish();  // Cerrar la actividad
+                showTimePicker();
             }
         });
 
-        // Botón de cancelar
-        Button cancelButton = findViewById(R.id.cancelButton);
+        // Guardar la hora seleccionada
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                saveTime();
+            }
+        });
+
+        // Cancelar la selección
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Cerrar la actividad sin devolver nada
-                finish();
+                finish(); // Cierra la actividad
             }
         });
+    }
+
+    private void showTimePicker() {
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+                (view, selectedHour, selectedMinute) -> {
+                    selectedTime = String.format("%02d:%02d", selectedHour, selectedMinute);
+                    timeTextView.setText(selectedTime);
+                }, hour, minute, true);
+        timePickerDialog.show();
+    }
+
+    private void saveTime() {
+        // Retornar la hora seleccionada a la actividad anterior
+        Intent intent = new Intent();
+        intent.putExtra("time", selectedTime);
+        setResult(RESULT_OK, intent);
+        finish();
     }
 }

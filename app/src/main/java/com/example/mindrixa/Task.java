@@ -1,44 +1,25 @@
 package com.example.mindrixa;
 
 public class Task {
-    private String taskName;
-    private int day;
-    private int month;
-    private int year;
-    private int hour;
-    private int minute;
+    private String date;
+    private String time;
+    private String comment;
 
-    public Task(String taskName, int day, int month, int year, int hour, int minute) {
-        this.taskName = taskName;
-        this.day = day;
-        this.month = month;
-        this.year = year;
-        this.hour = hour;
-        this.minute = minute;
+    public Task(String date, String time, String comment) {
+        this.date = date;
+        this.time = time;
+        this.comment = comment;
     }
 
-    // Getters y Setters
-    public String getTaskName() {
-        return taskName;
+    public String getDate() {
+        return date;
     }
 
-    public int getDay() {
-        return day;
+    public String getTime() {
+        return time;
     }
 
-    public int getMonth() {
-        return month;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public int getHour() {
-        return hour;
-    }
-
-    public int getMinute() {
-        return minute;
+    public String getComment() {
+        return comment;
     }
 }

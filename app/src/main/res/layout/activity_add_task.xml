@@ -5,37 +5,41 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <!-- EditText para el nombre o comentario de la tarea -->
-    <EditText
-        android:id="@+id/taskNameEditText"
+    <TextView
+        android:id="@+id/selectedDateTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Comentario de la tarea" />
+        android:text="Fecha seleccionada"
+        android:padding="8dp" />
 
-    <!-- DatePicker para seleccionar la fecha -->
-    <DatePicker
-        android:id="@+id/datePicker"
+    <Button
+        android:id="@+id/selectDateButton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Seleccionar Fecha" />
 
-    <!-- Botón para seleccionar la hora -->
+    <TextView
+        android:id="@+id/selectedTimeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hora seleccionada"
+        android:padding="8dp" />
+
     <Button
         android:id="@+id/selectTimeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Seleccionar Hora" />
 
-    <!-- Botón de guardar tarea -->
+    <EditText
+        android:id="@+id/commentEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Comentario" />
+
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Guardar" />
-
-    <!-- Botón de atrás -->
-    <Button
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Atrás" />
 </LinearLayout>

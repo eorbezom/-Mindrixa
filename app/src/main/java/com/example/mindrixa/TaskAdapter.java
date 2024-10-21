@@ -6,13 +6,13 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.List;
+import java.util.ArrayList;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
 
-    private List<Task> taskList;
+    private ArrayList<Task> taskList;
 
-    public TaskAdapter(List<Task> taskList) {
+    public TaskAdapter(ArrayList<Task> taskList) {
         this.taskList = taskList;
     }
 
@@ -25,10 +25,10 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull TaskViewHolder holder, int position) {
-        Task currentTask = taskList.get(position);
-        holder.taskNameTextView.setText(currentTask.getTaskName());
-        holder.taskDateTextView.setText(currentTask.getDay() + "/" + (currentTask.getMonth() + 1) + "/" + currentTask.getYear());
-        holder.taskTimeTextView.setText(currentTask.getHour() + ":" + String.format("%02d", currentTask.getMinute()));
+        Task task = taskList.get(position);
+        holder.taskDateTextView.setText(task.getDate());
+        holder.taskTimeTextView.setText(task.getTime());
+        holder.taskCommentTextView.setText(task.getComment());
     }
 
     @Override
@@ -36,16 +36,16 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         return taskList.size();
     }
 
-    public static class TaskViewHolder extends RecyclerView.ViewHolder {
-        public TextView taskNameTextView;
-        public TextView taskDateTextView;
-        public TextView taskTimeTextView;
+    static class TaskViewHolder extends RecyclerView.ViewHolder {
+        TextView taskDateTextView;
+        TextView taskTimeTextView;
+        TextView taskCommentTextView;
 
         public TaskViewHolder(@NonNull View itemView) {
             super(itemView);
-            taskNameTextView = itemView.findViewById(R.id.taskNameTextView);
             taskDateTextView = itemView.findViewById(R.id.taskDateTextView);
             taskTimeTextView = itemView.findViewById(R.id.taskTimeTextView);
+            taskCommentTextView = itemView.findViewById(R.id.taskCommentTextView);
         }
     }
 }
