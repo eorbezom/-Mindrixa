@@ -64,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:backgroundTint="#FFFFFF"
-        android:text="Configuración"
+        android:text="Comunidad"
         android:textColor="#021BFA"
         app:cornerRadius="?android:attr/windowTitleSize"
         app:layout_constraintEnd_toEndOf="parent"
