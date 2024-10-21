@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
+    android:background="@color/black"
     android:gravity="center"
     android:orientation="vertical"
     android:padding="16dp">
@@ -22,6 +22,7 @@
             android:layout_marginTop="60dp"
             android:paddingBottom="8dp"
             android:text="10:00"
+            android:textColor="#EFDBDB"
             android:textSize="48sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/imageView"
@@ -46,7 +47,9 @@
             android:id="@+id/readyButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:backgroundTint="#07ED0B"
             android:text="@string/ready_button"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.928"
@@ -56,14 +59,16 @@
 
         <Button
             android:id="@+id/deleteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="75dp"
+            android:layout_height="51dp"
             android:layout_marginStart="132dp"
-            android:layout_marginBottom="24dp"
-            android:text="@string/delete_button"
+            android:layout_marginBottom="28dp"
+            android:backgroundTint="#02FFFFFF"
+            android:textColor="#D60000"
+            app:icon="@drawable/delete"
             app:layout_constraintBottom_toTopOf="@+id/reprogramButton"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.062"
+            app:layout_constraintHorizontal_bias="0.627"
             app:layout_constraintStart_toEndOf="@+id/clock" />
 
         <Button
@@ -71,7 +76,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="28dp"
+            android:backgroundTint="#040303"
             android:text="@string/reprogram_button"
+            android:textColor="#FB0101"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/readyButton"
             app:layout_constraintTop_toTopOf="parent"
@@ -92,35 +99,25 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/taskRecyclerView"
-        android:layout_width="325dp"
-        android:layout_height="164dp"
+        android:layout_width="326dp"
+        android:layout_height="193dp"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_weight="1"
-        android:paddingBottom="8dp" />
-
-    <TextView
-        android:id="@+id/nextTaskTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Tarea más próxima:"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/nextTaskDetailsTextView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="8dp" />
+        android:contextClickable="true"
+        android:paddingBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/addMoreTasksButton"
-        android:layout_width="match_parent"
+        android:layout_width="52dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/colorPrimary"
-        android:text="@string/add_more_tasks"
+        android:padding="16dp"
         android:textColor="@android:color/white"
-        android:padding="16dp" />
+        app:icon="@drawable/agregar_verde"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:backgroundTint="#00FFFFFF" />
 </LinearLayout>
