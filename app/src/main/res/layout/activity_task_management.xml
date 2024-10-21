@@ -96,19 +96,31 @@
         android:layout_height="164dp"
         android:layout_marginStart="16dp"
         android:layout_weight="1"
-        android:background="#D61616"
         android:paddingBottom="8dp" />
 
-    <!-- Botón "+" para añadir más tareas -->
+    <TextView
+        android:id="@+id/nextTaskTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:text="Tarea más próxima:"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nextTaskDetailsTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp" />
+
     <Button
         android:id="@+id/addMoreTasksButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"
-        android:background="?android:attr/selectableItemBackgroundBorderless"
-        android:padding="16dp"
-        android:text="+"
-        android:textColor="#01FF66"
-        android:textSize="34sp" />
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimary"
+        android:text="@string/add_more_tasks"
+        android:textColor="@android:color/white"
+        android:padding="16dp" />
 </LinearLayout>

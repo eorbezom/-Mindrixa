@@ -33,7 +33,7 @@ public class TaskManagementActivity extends AppCompatActivity {
         recyclerView.setAdapter(taskAdapter);
 
         // Botón para añadir una nueva tarea
-        Button addMoreTasksButton = findViewById(R.id.addMoreTasksButton); // Asegúrate de que este ID coincida con el XML
+        Button addMoreTasksButton = findViewById(R.id.addMoreTasksButton);
         addMoreTasksButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

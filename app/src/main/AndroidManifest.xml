@@ -33,7 +33,8 @@
         <activity android:name=".MenuActivity" />
 
         <!-- TaskManagementActivity: Pantalla de gestión de tareas -->
-        <activity android:name=".TaskManagementActivity" />
+        <activity android:name=".TaskManagementActivity"></activity>
+
 
         <!-- AddTaskActivity: Pantalla para agregar nuevas tareas -->
         <activity android:name=".AddTaskActivity" />
