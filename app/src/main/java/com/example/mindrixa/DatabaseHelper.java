@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-
 import java.util.ArrayList;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -46,13 +45,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
         while (cursor.moveToNext()) {
+            int id = cursor.getInt(0);
             String date = cursor.getString(1);
             String time = cursor.getString(2);
             String comment = cursor.getString(3);
-            taskList.add(new Task(date, time, comment));
+            taskList.add(new Task(id, comment, date, time));
         }
         cursor.close();
         db.close();
         return taskList;
+    }
+
+    public boolean deleteTask(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        int result = db.delete(TABLE_NAME, "id = ?", new String[]{String.valueOf(id)});
+        db.close();
+        return result > 0;
     }
 }
