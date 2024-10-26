@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="hora"
-        android:textColor="#000000"
+        android:textColor="#F40000"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -49,20 +49,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/readyButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#07ED0B"
-            android:text="@string/ready_button"
-            android:textColor="#FFFFFF"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.928"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/deleteButton"
-            app:layout_constraintVertical_bias="1.0" />
-
         <!-- Icono de borrar --><![CDATA[
         android:contentDescription="@string/delete_task"
         app:layout_constraintBottom_toTopOf="@+id/reprogramButton"
@@ -77,6 +63,20 @@
 
 
         ]]>
+
+        <Button
+            android:id="@+id/readyButton"
+            android:layout_width="161dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#07ED0B"
+            android:text="@string/ready_button"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.929"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/deleteButton"
+            app:layout_constraintVertical_bias="0.444" />
 
         <ImageButton
             android:id="@+id/deleteButton"
@@ -93,7 +93,7 @@
             android:id="@+id/reprogramButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="40dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="4dp"
             android:backgroundTint="#040303"
             android:text="@string/reprogram_button"
@@ -106,7 +106,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="comentario"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintBottom_toTopOf="@+id/deleteButton"
             app:layout_constraintTop_toTopOf="parent"
@@ -125,10 +125,12 @@
     <!-- Botón para añadir más tareas -->
     <Button
         android:id="@+id/addMoreTasksButton"
-        android:layout_width="wrap_content"
+        android:layout_width="59dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#6200EA"
-        android:text="Agregar más tareas"
-        android:textColor="@android:color/white" />
+        android:backgroundTint="#002BEA"
+        android:drawableLeft="@drawable/agregar_verde"
+        android:textColor="@android:color/white" /> <!-- Cambia "icono_mas" al nombre de tu archivo de imagen -->
+    android:drawablePadding="8dp" /> <!-- Espacio entre el texto y la imagen -->
+
 </LinearLayout>

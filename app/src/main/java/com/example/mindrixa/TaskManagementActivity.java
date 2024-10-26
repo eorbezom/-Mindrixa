@@ -56,6 +56,12 @@ public class TaskManagementActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        Button reprogramButton = findViewById(R.id.reprogramButton);
+        reprogramButton.setOnClickListener(v -> {
+            Intent intent = new Intent(TaskManagementActivity.this, AddTaskActivity.class);
+            startActivity(intent);
+        });
+
         // Funcionalidad del botón de eliminar
         ImageButton deleteButton = findViewById(R.id.deleteButton);
         deleteButton.setOnClickListener(v -> {
@@ -67,6 +73,13 @@ public class TaskManagementActivity extends AppCompatActivity {
                 clearTaskDetails(); // Limpia los detalles mostrados
             }
         });
+
+        Button readyButton = findViewById(R.id.readyButton);
+        readyButton.setOnClickListener(v -> {
+            Intent intent = new Intent(TaskManagementActivity.this, TimerActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     @Override

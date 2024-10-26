@@ -16,6 +16,7 @@
         android:id="@+id/selectDateButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#1F8A23"
         android:text="Seleccionar Fecha" />
 
     <TextView
@@ -29,6 +30,7 @@
         android:id="@+id/selectTimeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#1F8A23"
         android:text="Seleccionar Hora" />
 
     <EditText
@@ -41,5 +43,6 @@
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#1F8A23"
         android:text="Guardar" />
 </LinearLayout>

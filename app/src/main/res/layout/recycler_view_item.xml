@@ -9,20 +9,23 @@
         android:id="@+id/taskCommentTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Comentario"
-        android:textSize="16sp"/>
+        android:text="fecha"
+        android:textColor="#2FFB01"
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/taskDateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fecha"
-        android:textSize="14sp"/>
+        android:text="hora"
+        android:textColor="#FF0303"
+        android:textSize="14sp" />
 
     <TextView
         android:id="@+id/taskTimeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hora"
-        android:textSize="14sp"/>
+        android:text="comentario"
+        android:textColor="#FBFBFB"
+        android:textSize="14sp" />
 </LinearLayout>
