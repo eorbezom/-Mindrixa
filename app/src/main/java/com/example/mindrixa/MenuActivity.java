@@ -1,5 +1,6 @@
 package com.example.mindrixa;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -32,12 +33,10 @@ public class MenuActivity extends AppCompatActivity {
         }
 
         // Configurar el botón de gestión del tiempo
-        timeManagementButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Aquí puedes iniciar la actividad de gestión de tiempo cuando esté lista
-                Toast.makeText(MenuActivity.this, "Estamos en mantenimiento, nos vemos pronto.", Toast.LENGTH_SHORT).show();
-            }
+        Button gestionTime = findViewById(R.id.option_1_button);
+        gestionTime.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, TaskManagementActivity.class);
+            startActivity(intent);
         });
 
         // Configurar el botón de control emocional

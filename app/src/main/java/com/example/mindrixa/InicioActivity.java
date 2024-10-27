@@ -18,7 +18,7 @@ public class InicioActivity extends AppCompatActivity {
 
         // Redirige al menú principal
         continueButton.setOnClickListener(v -> {
-            Intent intent = new Intent(InicioActivity.this, MenuActivity.class);
+            Intent intent = new Intent(InicioActivity.this, MenuBasicActivity.class);
             startActivity(intent);
         });
 
