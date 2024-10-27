@@ -23,9 +23,11 @@ public class InicioActivity extends AppCompatActivity {
         });
 
         // Botón para ingresar con cuenta (puedes añadir la lógica de autenticación aquí)
-        Button loginButton = findViewById(R.id.login_button);
-        loginButton.setOnClickListener(v -> {
-            // Aquí iría la lógica de login
-        });
+        Button ingresCuenta = findViewById(R.id.inicio_button);
+                ingresCuenta.setOnClickListener(v -> {
+                    Intent intent = new Intent(InicioActivity.this, LoginActivity.class);
+                    startActivity(intent);
+                });
     }
 }
+
