@@ -1,39 +1,61 @@
 package com.example.mindrixa;
 
-import android.content.Intent;  // Asegúrate de agregar esta importación
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MenuActivity extends AppCompatActivity {
+
+    private TextView userNameTextView;
+    private Button timeManagementButton;
+    private Button emotionalControlButton;
+    private Button communityButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        // Opción 1: Gestión de tiempo
-        Button option1 = findViewById(R.id.option_1_button);
-        option1.setOnClickListener(v -> {
-            // Redirigir a la actividad de gestión de tareas
-            Intent intent = new Intent(MenuActivity.this, TaskManagementActivity.class);
-            startActivity(intent);
+        userNameTextView = findViewById(R.id.user_name); // Cambia a user_name
+        timeManagementButton = findViewById(R.id.option_1_button); // Cambia a option_1_button
+        emotionalControlButton = findViewById(R.id.option_2_button); // Cambia a option_2_button
+        communityButton = findViewById(R.id.option_3_button); // Cambia a option_3_button
+
+        // Obtener el nombre de usuario desde las preferencias o de otra fuente
+        String userName = getIntent().getStringExtra("USER_NAME");
+        if (userName != null && !userName.isEmpty()) {
+            userNameTextView.setText("¡Hola, " + userName + "!");
+        }
+
+        // Configurar el botón de gestión del tiempo
+        timeManagementButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Aquí puedes iniciar la actividad de gestión de tiempo cuando esté lista
+                Toast.makeText(MenuActivity.this, "Estamos en mantenimiento, nos vemos pronto.", Toast.LENGTH_SHORT).show();
+            }
         });
 
-        // Opción 2: Control emocional
-        Button option2 = findViewById(R.id.option_2_button);
-        option2.setOnClickListener(v -> {
-            Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
-            startActivity(intent);
-            // Aquí puedes agregar la lógica para el control emocional
+        // Configurar el botón de control emocional
+        emotionalControlButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Mostrar mensaje de mantenimiento
+                Toast.makeText(MenuActivity.this, "Estamos en mantenimiento, nos vemos pronto.", Toast.LENGTH_SHORT).show();
+            }
         });
 
-        // Opción 3: Configuración
-        Button option3 = findViewById(R.id.option_3_button);
-        option3.setOnClickListener(v -> {
-            Toast.makeText(MenuActivity.this, "Comunidad", Toast.LENGTH_SHORT).show();
-            // Aquí puedes agregar la lógica de configuración
+        // Configurar el botón de comunidad
+        communityButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Mostrar mensaje de mantenimiento
+                Toast.makeText(MenuActivity.this, "Estamos en mantenimiento, nos vemos pronto.", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }

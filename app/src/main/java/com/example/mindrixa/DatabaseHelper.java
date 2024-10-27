@@ -5,9 +5,11 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import java.util.ArrayList;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
+
     private static final String DATABASE_NAME = "tasks.db";
     private static final String TASKS_TABLE = "tasks";
     private static final String USERS_TABLE = "users";
@@ -87,7 +89,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // Métodos para gestionar usuarios
+    public boolean isEmailRegistered(String email) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + USERS_TABLE + " WHERE " + USER_COL_3 + " = ?", new String[]{email});
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        db.close();
+        return exists;
+    }
+
     public boolean registerUser(String name, String email, String password) {
+        // Primero, verificar si el correo ya está registrado
+        if (isEmailRegistered(email)) {
+            Log.d("DatabaseHelper", "registerUser - Email ya registrado.");
+            return false;  // El correo ya está en uso
+        }
+
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(USER_COL_2, name);
@@ -117,5 +134,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         int result = db.update(USERS_TABLE, contentValues, "email = ?", new String[]{email});
         db.close();
         return result > 0;
+    }
+
+    // Método para obtener el nombre del usuario
+    public String getUserName(String email) {
+        String userName = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+        String query = "SELECT " + USER_COL_2 + " FROM " + USERS_TABLE + " WHERE " + USER_COL_3 + " = ?";
+        Cursor cursor = db.rawQuery(query, new String[]{email});
+
+        if (cursor.moveToFirst()) {
+            userName = cursor.getString(0); // Suponiendo que el nombre está en la primera columna
+        }
+        cursor.close();
+        db.close();
+        return userName;
     }
 }

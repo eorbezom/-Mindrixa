@@ -33,10 +33,18 @@ public class LoginActivity extends AppCompatActivity {
 
             if (dbHelper.checkUser(email, password)) {
                 Toast.makeText(this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
-                // Redirigir a la pantalla principal o a la actividad deseada
+
+                // Obtenemos el nombre del usuario desde la base de datos (modificar según tu método checkUser)
+                String userName = dbHelper.getUserName(email);  // Suponiendo que tienes este método
+
+                // Creamos un Intent para abrir MenuActivity y enviamos el nombre del usuario
+                Intent intent = new Intent(LoginActivity.this, MenuActivity.class);
+                intent.putExtra("USER_NAME", userName);  // Enviamos el nombre del usuario
+                startActivity(intent);
             } else {
                 Toast.makeText(this, "Credenciales incorrectas", Toast.LENGTH_SHORT).show();
             }
+
         });
 
         forgotPasswordTextView.setOnClickListener(v -> {
