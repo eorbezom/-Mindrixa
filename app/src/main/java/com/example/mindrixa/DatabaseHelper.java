@@ -9,11 +9,20 @@ import java.util.ArrayList;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "tasks.db";
-    private static final String TABLE_NAME = "tasks";
-    private static final String COL_1 = "id";
-    private static final String COL_2 = "date";
-    private static final String COL_3 = "time";
-    private static final String COL_4 = "comment";
+    private static final String TASKS_TABLE = "tasks";
+    private static final String USERS_TABLE = "users";
+
+    // Columnas de la tabla "tasks"
+    private static final String TASK_COL_1 = "id";
+    private static final String TASK_COL_2 = "date";
+    private static final String TASK_COL_3 = "time";
+    private static final String TASK_COL_4 = "comment";
+
+    // Columnas de la tabla "users"
+    private static final String USER_COL_1 = "id";
+    private static final String USER_COL_2 = "name";
+    private static final String USER_COL_3 = "email";
+    private static final String USER_COL_4 = "password";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -21,29 +30,43 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE " + TABLE_NAME + " (id INTEGER PRIMARY KEY AUTOINCREMENT, date TEXT, time TEXT, comment TEXT)");
+        // Crear tabla "tasks"
+        db.execSQL("CREATE TABLE " + TASKS_TABLE + " (" +
+                TASK_COL_1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                TASK_COL_2 + " TEXT, " +
+                TASK_COL_3 + " TEXT, " +
+                TASK_COL_4 + " TEXT)");
+
+        // Crear tabla "users"
+        db.execSQL("CREATE TABLE " + USERS_TABLE + " (" +
+                USER_COL_1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                USER_COL_2 + " TEXT, " +
+                USER_COL_3 + " TEXT UNIQUE, " +  // `email` debe ser único
+                USER_COL_4 + " TEXT)");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + TASKS_TABLE);
+        db.execSQL("DROP TABLE IF EXISTS " + USERS_TABLE);
         onCreate(db);
     }
 
+    // Métodos para gestionar tareas
     public void addTask(Task task) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COL_2, task.getDate());
-        contentValues.put(COL_3, task.getTime());
-        contentValues.put(COL_4, task.getComment());
-        db.insert(TABLE_NAME, null, contentValues);
+        contentValues.put(TASK_COL_2, task.getDate());
+        contentValues.put(TASK_COL_3, task.getTime());
+        contentValues.put(TASK_COL_4, task.getComment());
+        db.insert(TASKS_TABLE, null, contentValues);
         db.close();
     }
 
     public ArrayList<Task> getAllTasks() {
         ArrayList<Task> taskList = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TASKS_TABLE, null);
         while (cursor.moveToNext()) {
             int id = cursor.getInt(0);
             String date = cursor.getString(1);
@@ -58,7 +81,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public boolean deleteTask(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        int result = db.delete(TABLE_NAME, "id = ?", new String[]{String.valueOf(id)});
+        int result = db.delete(TASKS_TABLE, "id = ?", new String[]{String.valueOf(id)});
+        db.close();
+        return result > 0;
+    }
+
+    // Métodos para gestionar usuarios
+    public boolean registerUser(String name, String email, String password) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(USER_COL_2, name);
+        contentValues.put(USER_COL_3, email);
+        contentValues.put(USER_COL_4, password);
+
+        long result = db.insert(USERS_TABLE, null, contentValues);
+        db.close();
+        return result != -1;
+    }
+
+    public boolean checkUser(String email, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + USERS_TABLE + " WHERE email = ? AND password = ?",
+                new String[]{email, password});
+        boolean exists = cursor.getCount() > 0;
+        cursor.close();
+        db.close();
+        return exists;
+    }
+
+    public boolean updatePassword(String email, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(USER_COL_4, newPassword);
+
+        int result = db.update(USERS_TABLE, contentValues, "email = ?", new String[]{email});
         db.close();
         return result > 0;
     }

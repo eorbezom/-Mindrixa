@@ -27,7 +27,7 @@
         <activity android:name=".WelcomeActivity" />
 
         <!-- LoginActivity: Actividad de inicio de sesión -->
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".InicioActivity" />
 
         <!-- MenuActivity: El menú de opciones -->
         <activity android:name=".MenuActivity" />
@@ -41,6 +41,9 @@
 
         <activity android:name=".SelectTimeActivity" />
          <activity android:name=".TimerActivity"/>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".PasswordRecoveryActivity"/>
+        <activity android:name=".RegisterActivity"/>
 
 
     </application>

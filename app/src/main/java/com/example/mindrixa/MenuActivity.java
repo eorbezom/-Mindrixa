@@ -24,14 +24,15 @@ public class MenuActivity extends AppCompatActivity {
         // Opción 2: Control emocional
         Button option2 = findViewById(R.id.option_2_button);
         option2.setOnClickListener(v -> {
-            Toast.makeText(MenuActivity.this, "Control emocional", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
+            startActivity(intent);
             // Aquí puedes agregar la lógica para el control emocional
         });
 
         // Opción 3: Configuración
         Button option3 = findViewById(R.id.option_3_button);
         option3.setOnClickListener(v -> {
-            Toast.makeText(MenuActivity.this, "Configuración", Toast.LENGTH_SHORT).show();
+            Toast.makeText(MenuActivity.this, "Comunidad", Toast.LENGTH_SHORT).show();
             // Aquí puedes agregar la lógica de configuración
         });
     }

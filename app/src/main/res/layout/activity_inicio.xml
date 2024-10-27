@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/space_background">
+
+    <!-- Imagen del personaje -->
+
+    <!-- Texto de saludo -->
+
+    <!-- Botón Continuar -->
+
+    <ImageView
+        android:id="@+id/character_image"
+        android:layout_width="332dp"
+        android:layout_height="371dp"
+        android:contentDescription="Character Image"
+        android:src="@drawable/character_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/greeting_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hola, soy Mindri"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/character_image" />
+
+    <!-- Botón Ingresar con cuenta -->
+    <Button
+        android:id="@+id/continue_button"
+        android:layout_width="163dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#FFFCFC"
+        android:text="Continuar"
+        android:textColor="#0E47F4"
+        android:textSize="18sp"
+        app:cornerRadius="?android:attr/windowTitleSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/greeting_text" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#FFFFFF"
+        android:text="Ingresar con cuenta"
+        android:textColor="#002AFF"
+        android:textSize="18sp"
+        app:cornerRadius="?android:attr/windowTitleSize"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/continue_button"
+        tools:circularflow_radiusInDP="50%" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

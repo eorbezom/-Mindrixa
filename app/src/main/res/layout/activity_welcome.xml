@@ -6,12 +6,17 @@
     android:background="@drawable/background_image"
     tools:ignore="ExtraText">
 
+    <!-- Asegúrate de que la imagen esté en res/drawable y el nombre sea correcto -->
+
     <ImageView
         android:id="@+id/welcomeImageView"
-        android:layout_width="match_parent"
-        android:layout_height="419dp"
+        android:layout_width="381dp"
+        android:layout_height="364dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="12dp"
         android:src="@drawable/character_image" />
-    <!-- Asegúrate de que la imagen esté en res/drawable y el nombre sea correcto -->
 
     <TextView
         android:id="@+id/welcomeTextView"

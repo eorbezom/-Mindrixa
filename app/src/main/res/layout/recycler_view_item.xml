@@ -1,16 +1,21 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:backgroundTint="#1C5899"
     android:orientation="vertical"
-    android:padding="8dp">
+
+    android:padding="8dp"
+    app:barrierMargin="4dp"
+    tools:background="#E60606">
 
     <TextView
         android:id="@+id/taskCommentTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="fecha"
-        android:textColor="#2FFB01"
+        android:textColor="#FFFFFF"
         android:textSize="16sp" />
 
     <TextView
@@ -18,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="hora"
-        android:textColor="#FF0303"
+        android:textColor="#F8F8F8"
         android:textSize="14sp" />
 
     <TextView

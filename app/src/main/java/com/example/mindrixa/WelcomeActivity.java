@@ -21,7 +21,7 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Cambia esto a la actividad que deseas iniciar
-                Intent intent = new Intent(WelcomeActivity.this, LoginActivity.class);
+                Intent intent = new Intent(WelcomeActivity.this, InicioActivity.class);
                 startActivity(intent);
             }
         });
