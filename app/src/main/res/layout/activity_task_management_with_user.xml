@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color"
+    android:backgroundTint="#000000"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".TaskManagementWithUserActivity">
+
+    <!-- Sección de saludo y usuario -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:background="#EFEFEF"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/userIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription="@string/user_icon_desc"
+            android:src="@drawable/ic_user_icon" />
+
+        <TextView
+            android:id="@+id/greetingText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text=" Usuario!"
+            android:textColor="#040404"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- ConstraintLayout con detalles de la tarea y botones -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="312dp"
+        android:layout_marginBottom="16dp"
+        android:background="#000000"
+        android:padding="8dp">
+
+        <!-- Imagen de la tarea -->
+
+        <!-- Botón "Estoy listo" -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="135dp"
+            android:layout_height="131dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="@string/exercising_image"
+            android:src="@drawable/ic_exercising"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/readyButton"
+            android:layout_width="156dp"
+            android:layout_height="38dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#07ED0B"
+            android:text="@string/ready_button"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Botón eliminar tarea -->
+
+        <!-- Botón reprogramar tarea -->
+        <ImageButton
+            android:id="@+id/deleteButton"
+            android:layout_width="45dp"
+            android:layout_height="47dp"
+            android:layout_marginStart="296dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/delete"
+            app:layout_constraintBottom_toTopOf="@+id/reprogramButton"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/reprogramButton"
+            android:layout_width="153dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#FFFFFF"
+            android:text="@string/reprogram_button"
+            android:textColor="#FB0101"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/readyButton" />
+
+        <!-- TextView comentario -->
+        <TextView
+            android:id="@+id/selectedTaskComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="fecha"
+            android:textColor="#02EB35"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- TextView fecha -->
+        <TextView
+            android:id="@+id/selectedTaskDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="hora"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.327"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- TextView hora -->
+        <TextView
+            android:id="@+id/selectedTaskTime"
+            android:layout_width="168dp"
+            android:layout_height="110dp"
+            android:layout_marginTop="44dp"
+            android:gravity="center"
+            android:text="comentario"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.029"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/selectedTaskDate" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- RecyclerView para la lista de tareas -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/taskRecyclerView"
+        android:layout_width="346dp"
+        android:layout_height="273dp"
+        android:layout_weight="1"
+        android:background="#FAFAFA"
+        android:scrollbars="vertical"
+        tools:listitem="@layout/recycler_view_item" />
+
+    <!-- Botón para añadir más tareas -->
+    <Button
+        android:id="@+id/addMoreTasksButton"
+        android:layout_width="59dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#FFFFFF"
+        android:drawableLeft="@drawable/agregar_verde"
+        android:drawablePadding="8dp"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>

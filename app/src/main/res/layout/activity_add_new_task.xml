@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/selectedDateTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fecha seleccionada"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/selectDateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1F8A23"
+        android:text="Seleccionar Fecha" />
+
+    <TextView
+        android:id="@+id/selectedTimeTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hora seleccionada"
+        android:padding="8dp" />
+
+    <Button
+        android:id="@+id/selectTimeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1F8A23"
+        android:text="Seleccionar Hora" />
+
+    <EditText
+        android:id="@+id/commentEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Comentario" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#1F8A23"
+        android:text="Guardar" />
+</LinearLayout>

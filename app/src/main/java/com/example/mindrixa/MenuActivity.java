@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MenuActivity extends AppCompatActivity {
@@ -26,35 +25,29 @@ public class MenuActivity extends AppCompatActivity {
         emotionalControlButton = findViewById(R.id.option_2_button); // Cambia a option_2_button
         communityButton = findViewById(R.id.option_3_button); // Cambia a option_3_button
 
-        // Obtener el nombre de usuario desde las preferencias o de otra fuente
+        // Obtener el nombre de usuario desde el Intent
         String userName = getIntent().getStringExtra("USER_NAME");
         if (userName != null && !userName.isEmpty()) {
             userNameTextView.setText("¡Hola, " + userName + "!");
         }
 
         // Configurar el botón de gestión del tiempo
-        Button gestionTime = findViewById(R.id.option_1_button);
-        gestionTime.setOnClickListener(v -> {
-            Intent intent = new Intent(MenuActivity.this, TaskManagementActivity.class);
+        timeManagementButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, TaskManagementWithUserActivity.class);
+            intent.putExtra("USER_NAME", userName); // Pasar el nombre del usuario
             startActivity(intent);
         });
 
         // Configurar el botón de control emocional
-        emotionalControlButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Mostrar mensaje de mantenimiento
-                Toast.makeText(MenuActivity.this, "Estamos en mantenimiento, nos vemos pronto.", Toast.LENGTH_SHORT).show();
-            }
+        emotionalControlButton.setOnClickListener(v -> {
+            // Mostrar mensaje de mantenimiento
+            Toast.makeText(MenuActivity.this, "Estamos en mantenimiento, nos vemos pronto.", Toast.LENGTH_SHORT).show();
         });
 
         // Configurar el botón de comunidad
-        communityButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Mostrar mensaje de mantenimiento
-                Toast.makeText(MenuActivity.this, "Estamos en mantenimiento, nos vemos pronto.", Toast.LENGTH_SHORT).show();
-            }
+        communityButton.setOnClickListener(v -> {
+            // Mostrar mensaje de mantenimiento
+            Toast.makeText(MenuActivity.this, "Estamos en mantenimiento, nos vemos pronto.", Toast.LENGTH_SHORT).show();
         });
     }
 }

@@ -6,5 +6,6 @@
     <string name="reprogram_button">Reprogramar</string>
     <string name="add_more_tasks">Agregar Más Tareas</string>
     <string name="exercising_image">Imagen de ejercicio</string>
+    <string name="user_icon_desc">Ícono de usuario</string>
     <!-- Agrega otras cadenas si es necesario -->
 </resources>
