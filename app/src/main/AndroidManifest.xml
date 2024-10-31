@@ -47,6 +47,9 @@
         <activity android:name=".MenuBasicActivity"/>
         <activity android:name=".TaskManagementWithUserActivity"/>
         <activity android:name=".AddNewTaskActivity"/>
+        <activity android:name=".Pantalla1Activity"/>
+        <activity android:name=".Pantalla2Activity"/>
+        <activity android:name=".ProximaActualizacionActivity"/>
 
 
     </application>

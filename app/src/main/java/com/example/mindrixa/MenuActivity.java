@@ -1,8 +1,8 @@
 package com.example.mindrixa;
 
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,8 +40,9 @@ public class MenuActivity extends AppCompatActivity {
 
         // Configurar el botón de control emocional
         emotionalControlButton.setOnClickListener(v -> {
-            // Mostrar mensaje de mantenimiento
-            Toast.makeText(MenuActivity.this, "Estamos en mantenimiento, nos vemos pronto.", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MenuActivity.this, Pantalla1Activity.class);
+            intent.putExtra("USER_NAME", userName);
+            startActivity(intent);
         });
 
         // Configurar el botón de comunidad
