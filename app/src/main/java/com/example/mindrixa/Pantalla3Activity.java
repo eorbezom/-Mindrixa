@@ -37,12 +37,11 @@ public class Pantalla3Activity extends AppCompatActivity {
             finish();
         });
 
-
     }
 
 
     private void abrirSiguientePantalla(){
-        Intent intent= new Intent(this, ProximaActualizacionActivity.class);
+        Intent intent= new Intent(this, Pantalla4Activity.class);
         startActivity(intent);
     }
 }

@@ -1,4 +1,4 @@
-package com.example.mindrixa; // Cambia esto por el nombre de tu paquete
+package com.example.mindrixa;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
