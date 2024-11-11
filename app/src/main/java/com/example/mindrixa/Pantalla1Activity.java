@@ -20,7 +20,12 @@ public class Pantalla1Activity extends AppCompatActivity {
         btnOpcion1.setOnClickListener(v -> abrirSiguientePantalla());
         btnOpcion2.setOnClickListener(v -> abrirSiguientePantalla());
 
-        btnRetroceder.setOnClickListener(v -> finish());
+
+        btnRetroceder.setOnClickListener(v ->{
+            Intent intent = new Intent(Pantalla1Activity.this,MenuActivity.class);
+            startActivity(intent);
+         finish();
+        });
     }
 
     private void abrirSiguientePantalla() {
