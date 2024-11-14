@@ -7,6 +7,6 @@ public class ProximaActualizacionActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_proxima_actualizacion); // Carga el layout del segundo diseño
+        setContentView(R.layout.activity_proxima_actualizacion);
     }
 }

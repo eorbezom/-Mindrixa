@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mindrixa.ProximaActualizacionActivity;
 import com.example.mindrixa.R;
+import com.example.mindrixa.control.DasbordActivity;
 
 public class Pantalla11Activity extends AppCompatActivity {
 
@@ -24,7 +25,7 @@ public class Pantalla11Activity extends AppCompatActivity {
 
     }
     private void pantallaDashbord(){
-        Intent intent=new Intent(Pantalla11Activity.this, ProximaActualizacionActivity.class);
+        Intent intent=new Intent(Pantalla11Activity.this, DasbordActivity.class);
         startActivity(intent);
     }
 }

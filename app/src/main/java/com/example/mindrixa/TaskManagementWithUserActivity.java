@@ -1,6 +1,8 @@
 package com.example.mindrixa;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -23,6 +25,9 @@ public class TaskManagementWithUserActivity extends AppCompatActivity {
     private Task selectedTask; // Tarea seleccionada para eliminar
     private TextView userNameTextView; // Texto de saludo personalizado
     private ImageView userIcon; // Icono de usuario
+    private SharedPreferences sharedPreferences;
+    private static final String PREFS_NAME = "UserPrefs";
+    private static final String USER_NAME_KEY = "UserName";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,13 +40,21 @@ public class TaskManagementWithUserActivity extends AppCompatActivity {
         selectedTaskComment = findViewById(R.id.selectedTaskComment);
         userNameTextView = findViewById(R.id.greetingText); // Cambiar a greetingText para el saludo
         userIcon = findViewById(R.id.userIcon);
+        ImageView btnAtras = findViewById(R.id.imageView12);
 
-        // Obtener el nombre de usuario desde el Intent
-        String userName = getIntent().getStringExtra("USER_NAME");
+        // Obtener el nombre del usuario desde SharedPreferences
+        sharedPreferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        String userName = sharedPreferences.getString(USER_NAME_KEY, null);
+
+        // Verificar si el nombre de usuario está presente
         if (userName != null && !userName.isEmpty()) {
-            userNameTextView.setText("¿Qué haces hoy, " + userName + "?");
-        }else {
-            userNameTextView.setText("Bien seguimos con las agentas");
+            // Si el nombre está presente, mostrar saludo con el nombre del usuario
+            String saludo = "¡Bien, " + userName + "!" + "\n¡ tenemos cosas que hacer!";
+            userNameTextView.setText(saludo);  // Establecer el saludo en la TextView
+        } else {
+            // Si el nombre no está presente, mostrar un saludo genérico
+            String saludo = "¡Trabajemos !" + "\n¡con lo que quedamos";
+            userNameTextView.setText(saludo);  // Mostrar saludo genérico
         }
 
         // Inicializar base de datos y cargar tareas
@@ -69,6 +82,7 @@ public class TaskManagementWithUserActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+
         // Botón para reprogramar tarea
         Button reprogramButton = findViewById(R.id.reprogramButton);
         reprogramButton.setOnClickListener(v -> {
@@ -94,6 +108,8 @@ public class TaskManagementWithUserActivity extends AppCompatActivity {
             Intent intent = new Intent(TaskManagementWithUserActivity.this, TimerActivity.class);
             startActivity(intent);
         });
+
+        btnAtras.setOnClickListener(v -> pantallaAnterior());
     }
 
     @Override
@@ -103,6 +119,10 @@ public class TaskManagementWithUserActivity extends AppCompatActivity {
         taskList.clear();
         taskList.addAll(databaseHelper.getAllTasks());
         taskAdapter.notifyDataSetChanged();
+    }
+    private  void pantallaAnterior(){
+        Intent intent= new Intent(TaskManagementWithUserActivity.this, MenuActivity.class);
+        startActivity(intent);
     }
 
     private void displayTaskDetails(Task task) {

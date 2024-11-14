@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A4B89"
+    tools:context=".DasbordActivity">
+
+    <!-- Barra de estado personalizada -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:background="#1A4B89"/>
+
+    <!-- Sección de saludo con icono de usuario -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp">
+
+        <!-- Icono de usuario -->
+
+        <!-- Texto de saludo personalizado -->
+        <ImageView
+            android:id="@+id/user_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="8dp"
+            android:contentDescription="Icono de usuario"
+            android:src="@drawable/ic_user_icon" />
+
+        <TextView
+            android:id="@+id/user_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡Hola, usuario!"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+
+    <!-- Título de la pantalla -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Dashboard"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <!-- GridLayout para organizar los botones -->
+    <GridLayout
+        android:layout_width="400dp"
+        android:layout_height="513dp"
+        android:layout_gravity="center"
+        android:columnCount="2"
+        android:padding="16dp">
+
+        <!-- Botones de la aplicación -->
+        <Button
+            android:id="@+id/btnLeccion"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/book"
+            android:text="Lección"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnRespiracion"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/respiracion"
+            android:text="Respiración"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnCitas"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/calendar"
+            android:text="Citas"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnDiario"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/diario"
+            android:text="Diario"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnConsejos"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/consejos"
+            android:text="Consejos"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/btnMelodias"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/music"
+            android:text="Melodías para dormir"
+            android:textColor="#FFFFFF" />
+    </GridLayout>
+
+    <!-- Barra de navegación inferior -->
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/iconHome"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:contentDescription="Mapa"
+            android:src="@drawable/home" />
+
+        <!-- Botón de alerta central (rojo) -->
+        <Button
+            android:id="@+id/btnAlerta"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/alerta"
+            android:backgroundTint="#FF0000"
+            android:contentDescription="Alerta"
+            android:elevation="8dp"
+            app:iconTint="#EF0000" />
+
+        <ImageView
+            android:id="@+id/iconMetas"
+            android:layout_width="155dp"
+            android:layout_height="match_parent"
+            android:contentDescription="Perfil"
+            android:src="@drawable/metas" />
+    </LinearLayout>
+</LinearLayout>

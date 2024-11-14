@@ -1,7 +1,7 @@
 package com.example.mindrixa;
 
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
@@ -22,28 +22,35 @@ public class MenuActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
+        // Inicializar el TextView y los botones
         userNameTextView = findViewById(R.id.user_name); // Cambia a user_name
         timeManagementButton = findViewById(R.id.option_1_button); // Cambia a option_1_button
         emotionalControlButton = findViewById(R.id.option_2_button); // Cambia a option_2_button
         communityButton = findViewById(R.id.option_3_button); // Cambia a option_3_button
 
-        // Obtener el nombre de usuario desde el Intent
-        String userName = getIntent().getStringExtra("USER_NAME");
+        // Obtener el nombre del usuario desde SharedPreferences
+        SharedPreferences sharedPreferences = getSharedPreferences("MindrixaPrefs", MODE_PRIVATE);
+        String userName = sharedPreferences.getString("USER_NAME", "");
+
+        // Verificar si el nombre de usuario es válido
         if (userName != null && !userName.isEmpty()) {
-            userNameTextView.setText("¡Hola, " + userName + "!");
+            // Obtener el saludo dinámico con el nombre del usuario
+            String saludo = SaludoHelper.obtenerSaludoPersonalizado(userName, this);
+            userNameTextView.setText(saludo);  // Establecer el saludo en el TextView
+        } else {
+            // Si el nombre de usuario no es válido, mostrar un mensaje de error
+            userNameTextView.setText("El nombre de usuario no se recibió correctamente");
         }
 
         // Configurar el botón de gestión del tiempo
         timeManagementButton.setOnClickListener(v -> {
             Intent intent = new Intent(MenuActivity.this, TaskManagementWithUserActivity.class);
-            intent.putExtra("USER_NAME", userName); // Pasar el nombre del usuario
             startActivity(intent);
         });
 
         // Configurar el botón de control emocional
         emotionalControlButton.setOnClickListener(v -> {
             Intent intent = new Intent(MenuActivity.this, Pantalla1Activity.class);
-            intent.putExtra("USER_NAME", userName);
             startActivity(intent);
         });
 

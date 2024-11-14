@@ -43,7 +43,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE " + USERS_TABLE + " (" +
                 USER_COL_1 + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 USER_COL_2 + " TEXT, " +
-                USER_COL_3 + " TEXT UNIQUE, " +  // `email` debe ser único
+                USER_COL_3 + " TEXT UNIQUE, " +
                 USER_COL_4 + " TEXT)");
     }
 
@@ -116,10 +116,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return result != -1;
     }
 
-    public boolean checkUser(String email, String password) {
+    public boolean checkUserByName(String name, String password) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + USERS_TABLE + " WHERE email = ? AND password = ?",
-                new String[]{email, password});
+        Cursor cursor = db.rawQuery("SELECT * FROM " + USERS_TABLE + " WHERE " + USER_COL_2 + " = ? AND " + USER_COL_4 + " = ?",
+                new String[]{name, password});
         boolean exists = cursor.getCount() > 0;
         cursor.close();
         db.close();
@@ -144,7 +144,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(query, new String[]{email});
 
         if (cursor.moveToFirst()) {
-            userName = cursor.getString(0); // Suponiendo que el nombre está en la primera columna
+            userName = cursor.getString(0);
         }
         cursor.close();
         db.close();
