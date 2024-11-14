@@ -37,7 +37,7 @@ public class Pantalla7Activity extends AppCompatActivity {
 
     }
     private void siguientePantalla(){
-        Intent intent=new Intent(Pantalla7Activity.this, ProximaActualizacionActivity.class);
+        Intent intent=new Intent(Pantalla7Activity.this, Pantalla8Activity.class);
         startActivity(intent);
     }
 }

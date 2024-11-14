@@ -27,7 +27,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="28dp"
         android:indeterminateOnly="false"
-        android:progress="60"
+        android:progress="85"
         android:progressTint="#03E70C"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

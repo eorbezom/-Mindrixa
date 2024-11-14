@@ -55,6 +55,10 @@
         <activity android:name=".encuesta.Pantalla5Activity"/>
         <activity android:name=".encuesta.Pantalla6Activity"/>
         <activity android:name=".encuesta.Pantalla7Activity"/>
+        <activity android:name=".encuesta.Pantalla9Activity"/>
+        <activity android:name=".encuesta.Pantalla8Activity"/>
+        <activity android:name=".encuesta.Pantalla11Activity"/>
+        <activity android:name=".encuesta.Pantalla10Activity"/>
 
 
     </application>
