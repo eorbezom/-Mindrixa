@@ -56,6 +56,8 @@ public class MenuActivity extends AppCompatActivity {
 
         // Configurar el botón de comunidad
         communityButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MenuActivity.this, ProximaActualizacionActivity.class);
+            startActivity(intent);
             // Mostrar mensaje de mantenimiento
             Toast.makeText(MenuActivity.this, "Estamos en mantenimiento, nos vemos pronto.", Toast.LENGTH_SHORT).show();
         });
