@@ -40,7 +40,12 @@ dependencies {
     testImplementation(libs.junit) // Dependencia para pruebas unitarias
     androidTestImplementation(libs.ext.junit) // Dependencia para pruebas instrumentadas
     androidTestImplementation(libs.espresso.core) // Dependencia para pruebas de UI
+    implementation(libs.gson) // Dependencia para Gson
 
-    // Agregar la dependencia de Gson directamente
-    implementation(libs.gson)
+    // Añadir Glide y su compilador
+    implementation(libs.glide) // Dependencia de Glide
+    annotationProcessor(libs.glide.compiler) // Dependencia para el compilador de Glide
+
+
+
 }
