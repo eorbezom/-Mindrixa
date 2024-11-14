@@ -1,10 +1,13 @@
-package com.example.mindrixa;
+package com.example.mindrixa.encuesta;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mindrixa.MenuActivity;
+import com.example.mindrixa.R;
 
 public class Pantalla1Activity extends AppCompatActivity {
 
@@ -26,7 +29,7 @@ public class Pantalla1Activity extends AppCompatActivity {
 
 
         btnRetroceder.setOnClickListener(v ->{
-            Intent intent = new Intent(Pantalla1Activity.this,MenuActivity.class);
+            Intent intent = new Intent(Pantalla1Activity.this, MenuActivity.class);
             startActivity(intent);
          finish();
         });

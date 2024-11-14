@@ -1,17 +1,21 @@
-package com.example.mindrixa;
+package com.example.mindrixa.encuesta;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class Pantalla5Activity extends AddTaskActivity{
+import com.example.mindrixa.AddTaskActivity;
+import com.example.mindrixa.R;
+
+public class Pantalla5Activity extends AddTaskActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_pantalla5);
 
         Button btnOpcion = findViewById(R.id.button);
@@ -40,7 +44,8 @@ public class Pantalla5Activity extends AddTaskActivity{
     }
     //FUNCION PARA ABRIR EL SIGUIENTE PANTALLA
     private void abriSiguientePantalla(){
-        Intent intent=new Intent(this,Pantalla6Activity.class);
+        Intent intent=new Intent(Pantalla5Activity.this, Pantalla6Activity.class);
+        startActivity(intent);
 
     }
 }

@@ -8,6 +8,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mindrixa.encuesta.Pantalla1Activity;
+
 public class MenuActivity extends AppCompatActivity {
 
     private TextView userNameTextView;

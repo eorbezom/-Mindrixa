@@ -1,4 +1,4 @@
-package com.example.mindrixa;
+package com.example.mindrixa.encuesta;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mindrixa.R;
 
 public class Pantalla2Activity extends AppCompatActivity {
     @Override

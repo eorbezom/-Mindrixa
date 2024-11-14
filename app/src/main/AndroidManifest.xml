@@ -47,13 +47,14 @@
         <activity android:name=".MenuBasicActivity"/>
         <activity android:name=".TaskManagementWithUserActivity"/>
         <activity android:name=".AddNewTaskActivity"/>
-        <activity android:name=".Pantalla1Activity"/>
-        <activity android:name=".Pantalla2Activity"/>
+        <activity android:name=".encuesta.Pantalla1Activity"/>
+        <activity android:name=".encuesta.Pantalla2Activity"/>
         <activity android:name=".ProximaActualizacionActivity"/>
-        <activity android:name=".Pantalla3Activity"/>
-        <activity android:name=".Pantalla4Activity"/>
-        <activity android:name=".Pantalla5Activity"/>
-        <activity android:name=".Pantalla6Activity"/>
+        <activity android:name=".encuesta.Pantalla3Activity"/>
+        <activity android:name=".encuesta.Pantalla4Activity"/>
+        <activity android:name=".encuesta.Pantalla5Activity"/>
+        <activity android:name=".encuesta.Pantalla6Activity"/>
+        <activity android:name=".encuesta.Pantalla7Activity"/>
 
 
     </application>
