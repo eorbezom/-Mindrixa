@@ -52,6 +52,8 @@
         <activity android:name=".ProximaActualizacionActivity"/>
         <activity android:name=".Pantalla3Activity"/>
         <activity android:name=".Pantalla4Activity"/>
+        <activity android:name=".Pantalla5Activity"/>
+        <activity android:name=".Pantalla6Activity"/>
 
 
     </application>

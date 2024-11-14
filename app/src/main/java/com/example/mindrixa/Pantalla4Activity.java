@@ -45,7 +45,7 @@ public class Pantalla4Activity extends AppCompatActivity {
     }
     //metodo para ir a la siguiente pantalla
     private  void abrirSigientePantalla(){
-        Intent intent = new Intent(this, ProximaActualizacionActivity.class);
+        Intent intent = new Intent(this, Pantalla5Activity.class);
         startActivity(intent);
 
     }

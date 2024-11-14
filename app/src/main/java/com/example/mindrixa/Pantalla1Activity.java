@@ -15,10 +15,14 @@ public class Pantalla1Activity extends AppCompatActivity {
 
         Button btnOpcion1 = findViewById(R.id.btnOpcion1);
         Button btnOpcion2 = findViewById(R.id.btnOpcion2);
+        Button btnOpcion = findViewById(R.id.btnOpcion);
+        Button btnOpcion5 = findViewById(R.id.btnOpcion5);
         ImageButton btnRetroceder = findViewById(R.id.btnRetroceder);
 
         btnOpcion1.setOnClickListener(v -> abrirSiguientePantalla());
         btnOpcion2.setOnClickListener(v -> abrirSiguientePantalla());
+        btnOpcion.setOnClickListener(v -> abrirSiguientePantalla());
+        btnOpcion5.setOnClickListener(v -> abrirSiguientePantalla());
 
 
         btnRetroceder.setOnClickListener(v ->{
