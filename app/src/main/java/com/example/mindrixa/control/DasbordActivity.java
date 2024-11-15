@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.example.mindrixa.MenuActivity;
@@ -38,13 +39,13 @@ public class DasbordActivity extends AppCompatActivity {
         }
 
         // Inicializar los botones
-        Button btnLeccion = findViewById(R.id.btnLeccion);
-        Button btnCitas = findViewById(R.id.btnCitas);
-        Button btnRespiracion = findViewById(R.id.btnRespiracion);
-        Button btnDiario = findViewById(R.id.btnDiario);
-        Button btnConsejos = findViewById(R.id.btnConsejos);
-        Button btnMelodias = findViewById(R.id.btnMelodias);
-        Button btnAlerta = findViewById(R.id.btnAlerta);
+        ImageView btnLeccion = findViewById(R.id.btnLeccion);
+        ImageView btnCitas = findViewById(R.id.btnCitas);
+        ImageView btnRespiracion = findViewById(R.id.btnRespiracion);
+        ImageView btnDiario = findViewById(R.id.btnDiario);
+        ImageView btnConsejos = findViewById(R.id.btnConsejos);
+        ImageView btnMelodias = findViewById(R.id.btnMelodias);
+        ImageView btnAlerta = findViewById(R.id.btnAlerta);
 
         ImageView btnHome = findViewById(R.id.iconHome);
         ImageView btnMeta = findViewById(R.id.iconMetas);
