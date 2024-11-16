@@ -61,7 +61,7 @@ public class DasbordActivity extends AppCompatActivity {
 
         // Navegación al Home y Metas
         btnHome.setOnClickListener(v -> {
-            Intent intent = new Intent(DasbordActivity.this, MenuActivity.class);
+            Intent intent = new Intent(DasbordActivity.this, MenuActivitySegundo.class);
             startActivity(intent);
         });
 

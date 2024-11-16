@@ -108,9 +108,11 @@
                 android:id="@+id/textView17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
+                android:text="Respiracion"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                tools:fontFamily="@font/alfa_slab_one" />
         </LinearLayout>
 
         <!-- Botón Citas -->
@@ -133,9 +135,11 @@
                 android:id="@+id/textView18"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/alfa_slab_one"
                 android:text="Citas"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
         </LinearLayout>
 
         <!-- Botón Diario -->
@@ -158,9 +162,12 @@
                 android:id="@+id/textView19"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/alfa_slab_one"
                 android:text="Diario"
                 android:textAlignment="center"
-                android:textColor="#FFFFFF" />
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                tools:fontFamily="@font/alfa_slab_one" />
         </LinearLayout>
 
         <!-- Botón Consejos -->
