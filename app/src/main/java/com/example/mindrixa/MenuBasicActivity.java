@@ -8,6 +8,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mindrixa.control.RespirarActivity;
+
 public class MenuBasicActivity extends AppCompatActivity {
 
     private Button timeManagementButton;
@@ -43,7 +45,7 @@ public class MenuBasicActivity extends AppCompatActivity {
         communityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MenuBasicActivity.this, LoginActivity.class);
+                Intent intent = new Intent(MenuBasicActivity.this, ProximaActualizacionActivity.class);
                 startActivity(intent);
             }
         });

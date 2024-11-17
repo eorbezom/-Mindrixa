@@ -53,11 +53,13 @@ public class DasbordActivity extends AppCompatActivity {
         // Configurar botones para redirigir a la pantalla de actualización
         btnLeccion.setOnClickListener(v -> pantallaDeActualizacion());
         btnCitas.setOnClickListener(v -> pantallaDeActualizacion());
-        btnRespiracion.setOnClickListener(v -> pantallaDeActualizacion());
+        btnRespiracion.setOnClickListener(v -> pantallaRespirar());
         btnDiario.setOnClickListener(v -> pantallaDeActualizacion());
         btnConsejos.setOnClickListener(v -> pantallaDeActualizacion());
         btnMelodias.setOnClickListener(v -> pantallaDeActualizacion());
         btnAlerta.setOnClickListener(v -> pantallaDeActualizacion());
+
+
 
         // Navegación al Home y Metas
         btnHome.setOnClickListener(v -> {
@@ -69,6 +71,11 @@ public class DasbordActivity extends AppCompatActivity {
             Intent intent = new Intent(DasbordActivity.this, ProximaActualizacionActivity.class);
             startActivity(intent);
         });
+    }
+    private void pantallaRespirar(){
+        Intent intent=new Intent(DasbordActivity.this, RespirarActivity.class);
+        startActivity(intent);
+
     }
 
     private void pantallaDeActualizacion() {

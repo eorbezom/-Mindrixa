@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A4B89">
+
+    <!-- Mensaje del Cronómetro -->
+    <TextView
+        android:id="@+id/tvTiempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        android:layout_centerInParent="true"/>
+
+    <!-- Mensaje adicional -->
+    <TextView
+        android:id="@+id/tvMensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Respira profundamente"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:layout_below="@id/tvTiempo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <!-- Botón para iniciar el cronómetro -->
+    <ImageButton
+        android:id="@+id/btnIniciar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@id/tvMensaje"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:src="@drawable/play"
+        tools:scrollbarSize="150dp" />
+
+</RelativeLayout>

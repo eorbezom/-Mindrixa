@@ -61,6 +61,8 @@
         <activity android:name=".encuesta.Pantalla10Activity"/>
         <activity android:name=".control.DasbordActivity"/>
         <activity android:name=".control.MenuActivitySegundo"/>
+        <activity android:name=".control.CronometroActivity"/>
+        <activity android:name=".control.RespirarActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A4B89">
+
+    <!-- Mensaje superior -->
+    <TextView
+        android:id="@+id/mensajeSuperior"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="54dp"
+        android:layout_marginTop="16dp"
+        android:text="Respira profundamente y relájate"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <!-- Contenedor para las imágenes de Inhalar y Exhalar -->
+    <LinearLayout
+        android:id="@+id/contenedorRespiracion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/mensajeSuperior"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="0dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <!-- Imagen y texto para Inhalar -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageInhalar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:contentDescription="Inhalar"
+                android:src="@drawable/respiracion" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Inhalar"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Imagen y texto para Exhalar -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageExhalar"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:contentDescription="Exhalar"
+                android:src="@drawable/respiracion" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Exhalar"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Campos para configurar el cronómetro -->
+    <Spinner
+        android:id="@+id/etMinutos"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:hint="Minutos"
+        android:inputType="number"
+        android:background="#FFFFFF"
+        android:layout_below="@id/contenedorRespiracion"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:textColor="#000000" />
+
+    <Spinner
+        android:id="@+id/etSegundos"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:hint="Segundos"
+        android:inputType="number"
+        android:background="#FFFFFF"
+        android:layout_below="@id/etMinutos"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:textColor="#000000" />
+
+    <!-- Botón para ir al cronómetro -->
+    <Button
+        android:id="@+id/btnComenzar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etSegundos"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#007ACC"
+        android:text="Comenzar"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+    <!-- Barra de navegación inferior -->
+    <LinearLayout
+        android:id="@+id/barraNavegacion"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#00559C"
+        android:gravity="center"
+        android:padding="8dp">
+
+        <!-- Icono de Inicio -->
+        <ImageView
+            android:id="@+id/iconHome"
+            android:layout_width="60dp"
+            android:layout_height="64dp"
+            android:layout_marginEnd="32dp"
+            android:contentDescription="Inicio"
+            android:src="@drawable/home" />
+
+        <!-- Botón central personalizado -->
+        <ImageButton
+            android:id="@+id/iconCentral"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="#007ACC"
+            android:contentDescription="Central"
+            android:src="@drawable/alerta" />
+
+        <!-- Icono de Estadísticas -->
+        <ImageView
+            android:id="@+id/iconStats"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:contentDescription="Estadísticas"
+            android:src="@drawable/metas" />
+    </LinearLayout>
+</RelativeLayout>
